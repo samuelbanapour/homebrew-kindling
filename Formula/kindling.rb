@@ -1,8 +1,8 @@
 class Kindling < Formula
   desc "Zsh framework with an async prompt and single-pass line editing"
   homepage "https://github.com/samuelbanapour/kindling"
-  url "https://github.com/samuelbanapour/kindling/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "8227f2fb6286274fcbdeb64809a97d23d8cda85e22f5e4224d7882d51800cf62"
+  url "https://github.com/samuelbanapour/kindling/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "6d2fafb914a0baaa9f8e89a01ae173a641e874eadaf1eaf7d77f7edf971d7ab8"
   license "MIT"
   head "https://github.com/samuelbanapour/kindling.git", branch: "main"
 
@@ -57,7 +57,7 @@ class Kindling < Formula
     EOS
     output = shell_output("HOME=#{testpath} XDG_DATA_HOME=#{testpath}/data " \
                           "XDG_CACHE_HOME=#{testpath}/cache zsh -f #{testpath}/t.zsh")
-    assert_match "version=1.0.0", output
+    assert_match "version=1.0.1", output
     assert_match "install=homebrew", output
     assert_match "plugins=git extract jump zline", output
     assert_match "prompt=1", output
